@@ -23,7 +23,7 @@ class CarWashStation:
             car.clean_mark = self.clean_power
         return clean_mark_change
 
-    def serve_cars(self, cars: Car) -> float:
+    def serve_cars(self, cars: list[Car]) -> float:
         income = 0.0
         if len(cars):
             for car in cars:
@@ -38,8 +38,7 @@ class CarWashStation:
                          * self.average_rating
                          / self.distance_from_city_center,
                          1)
-        else:
-            return 0.0
+        return 0.0
 
     def rate_service(self, rating: int) -> None:
         self.average_rating = round((self.average_rating
